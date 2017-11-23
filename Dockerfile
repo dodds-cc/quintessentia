@@ -10,7 +10,6 @@ RUN apt-get install -y python-numpy-dev python-numpy python-yaml yasm
 RUN git clone https://github.com/MTG/gaia.git
 RUN wget https://github.com/MTG/essentia/archive/v2.1_beta3.tar.gz
 RUN wget https://libav.org/releases/libav-12.tar.gz
-#RUN wget http://essentia.upf.edu/documentation/svm_models/essentia-extractor-svm_models-v2.1_beta1.tar.gz
 
 # install libav
 RUN tar -xzvf libav-12.tar.gz
@@ -35,9 +34,5 @@ RUN cd essentia-2.1_beta3/ \
 	&& ./waf \
 	&& ./waf install
 RUN ldconfig
-
-#put svm models in place
-#RUN tar -xzvf essentia-extractor-svm_models-v2.1_beta1.tar.gz
-#RUN cp -R /v2.1_beta1/svm_models /svm_models
 
 WORKDIR /essentia
